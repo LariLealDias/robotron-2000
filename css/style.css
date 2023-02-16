@@ -9,9 +9,12 @@
 }
 
 body {
-    background: url(../img/fundo.jpg);
+    /* background: url(../img/fundo.jpg);
     background-position: center center;
-    background-size: cover cover;
+    background-size: cover cover; */
+
+    background: rgb(65,0,0);
+background: linear-gradient(90deg, rgba(65,0,0,1) 0%, rgba(13,13,83,1) 30%, rgba(192,229,237,1) 100%);
     padding: 0;
     margin: 0;
     font-weight: 300;
@@ -55,7 +58,8 @@ main {
     line-height: 0.8;
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    color: rgba(255,255,255,0.8)
+    color: rgba(255,255,255,0.8);
+    opacity: 0.5;
 }
 
 .box {
@@ -125,6 +129,11 @@ main {
     text-align: center;
     border: 3px solid var(--main-cinza);
     cursor: pointer;
+    transition: 0.5s;
+}
+.controle-ajuste:hover{
+    background-color: #b94a4a;
+    color: white;
 }
 
 .linha {
@@ -141,11 +150,15 @@ main {
     background: var(--main-branco);
     clip-path: polygon(100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 0);
     cursor: pointer;
+    transition: 0.5s;
 }
 
 .producao:hover {
-    background: var(--main-preto);
-    color: var(--main-branco)
+    /* background: var(--main-preto);
+    color: var(--main-branco) */
+    background-color: #b94a4a;
+    color: white;
+
 }
 
 
