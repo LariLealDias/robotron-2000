@@ -1,38 +1,41 @@
-const robotron = document.getElementById('img-robotron');
-const subtrair = document.getElementById('subtrair');
-const somar = document.getElementById('somar');
-const braco = document.getElementById('braco');
+//não faz mais sentido usar isto, uma vez que é mais facil 
+//acessar os botões  - e + pelo pai
+// const somar = document.getElementById('somar');
+// const subtrair = document.getElementById('subtrair');
+// const braco = document.getElementById('braco');
 
-const constrole = document.querySelectorAll('.controle-ajuste');
+// const controle = document.querySelectorAll(".controle-ajuste");
+const controle = document.querySelectorAll("[data-controler]");
 
-constrole.forEach((botao) => {
+
+controle.forEach((botao) => {
     botao.addEventListener("click", (event) => {
-        manipulaDados(event.target.textContent);
+        manipulaDados(event.target.dataset.controle, event.target.parentNode);
+        // manipulaDados(event.target.textContent, event.target.parentNode);
+                        //botão do simbolo da operação
+                                                    //container destes botões
     })
-});
-
-//relembrando funtions
-robotron.addEventListener("click", function(){
-    console.log('clicou');
-});
-
-robotron.addEventListener("click", () => {
-    console.log('clicou com arrow ');
-});
-
-robotron.addEventListener("click", (event) => {
-    console.log(event);
 });
 
 //Aumentando e diminuindo nivel do BRAÇOS
 // somar.addEventListener("click", () => {manipulaDados("somar")});
 // subtrair.addEventListener("click", () => {manipulaDados("subtrair")});
 
-function manipulaDados(operacao){
-    if(operacao === "subtrair"){
-        braco.value = parseInt(braco.value) - 1;
+function manipulaDados(SimboloDaOperacao, controle){
+    //buscar no controle (elemento pai)
+    // const peca = controle.querySelector('.controle-contador');
+    const peca = controle.querySelector('[data-contador]');
+    
+    if(SimboloDaOperacao === "-"){
+        peca.value = parseInt(peca.value) - 1;
     }else{
-         braco.value = parseInt(braco.value) + 1;
+        peca.value = parseInt(peca.value) + 1;
     }
+}
+
+function clear (){
+    var clear = "teste"; 
+
+    console.log(clear);
 }
 
