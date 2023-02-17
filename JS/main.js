@@ -6,14 +6,57 @@
 
 // const controle = document.querySelectorAll(".controle-ajuste");
 const controle = document.querySelectorAll("[data-controler]");
+const estatistica = document.querySelectorAll("[data-estatistica]");
+
+
+const pecas = {
+    "bracos": {
+        "forca": 29,
+        "poder": 35,
+        "energia": -21,
+        "velocidade": -5
+    },
+
+    "blindagem": {
+        "forca": 41,
+        "poder": 20,
+        "energia": 0,
+        "velocidade": -20
+    },
+    "nucleos":{
+        "forca": 0,
+        "poder": 7,
+        "energia": 48,
+        "velocidade": -24
+    },
+    "pernas":{
+        "forca": 27,
+        "poder": 21,
+        "energia": -32,
+        "velocidade": 42
+    },
+    "foguetes":{
+        "forca": 0,
+        "poder": 28,
+        "energia": 0,
+        "velocidade": -2
+    }
+}
 
 
 controle.forEach((botao) => {
     botao.addEventListener("click", (event) => {
         manipulaDados(event.target.dataset.controle, event.target.parentNode);
         // manipulaDados(event.target.textContent, event.target.parentNode);
-                        //botão do simbolo da operação
+                        //botão do simbolo da operação   ,
                                                     //container destes botões
+
+        atualizaEstatistica(event.target.dataset.peca);
+                                        //o .dataset vai pegar o nome do data-attribute
+                                        //no caso, não precisa colocar data-peca, pois
+                                        //ele entende que o data já se refere ao attribute,
+                                        //por isso se coloca apenas o nome do attribute
+                                        // * Explicação melhor no notion Sobre event.target.dataset no modulo 5 
     })
 });
 
@@ -32,10 +75,26 @@ function manipulaDados(SimboloDaOperacao, controle){
         peca.value = parseInt(peca.value) + 1;
     }
 }
+                            //o nome deste paramentro não é o .peca desta linha
+                            //atualizaEstatistica(event.target.dataset.peca);
+function atualizaEstatistica(peca){
+    console.log(pecas[peca]); //isso retornar o json no console
+    console.log("Qual peça foi clicada:  " + peca); //isso retornar o valor do data-peca
 
-function clear (){
-    var clear = "teste"; 
+    //atualizar cada um das estatistica
+    estatistica.forEach( (elemento) => {
 
-    console.log(clear);
+        //NUMEROS
+        console.log("O conteúdo do elemento clicado é o numero de cada estatistica: " + elemento.textContent);
+        
+        //DA ONDE PERTENCE OS NUMEROS
+        //porém tem que ser especifico daquela estatistica
+        //elemento.textContent retornar o numero, e o da onde este numero pertencen é com: 
+        console.log("O numero anterior pertence a: " + elemento.dataset.estatistica);
+
+        //Atualizar valores do textConte
+        elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica];
+
+    })
 }
 
