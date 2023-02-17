@@ -12,11 +12,15 @@ body {
     /* background: url(../img/fundo.jpg);
     background-position: center center;
     background-size: cover cover; */
+    /* background: url(../img/tecnologia-futurista-de-fundo-azul-de-circuito-digital-de-circulo.jpg); */
+    background: url(../img/renderizando-um-fundo-futurista-abstrato-com-luzes-brilhantes-de-neon-azul-e-laranja.jpg);
+    background-position: center center;
+    background-size: cover cover; 
 
-    background: rgb(65,0,0);
-background: linear-gradient(90deg, rgba(65,0,0,1) 0%, rgba(13,13,83,1) 30%, rgba(192,229,237,1) 100%);
+    /* background: linear-gradient(90deg, rgba(65,0,0,1) 0%, rgba(13,13,83,1) 30%, rgba(192,229,237,1) 100%); */
     padding: 0;
     margin: 0;
+    margin-top: 60px;
     font-weight: 300;
 }
 
@@ -33,7 +37,6 @@ main {
 }
 
 .robotron {
-    background: url(../img/estrutura.png) no-repeat;
     background-position: center center;
     margin: 0;
     flex-basis: 40%;
@@ -156,7 +159,7 @@ main {
 .producao:hover {
     /* background: var(--main-preto);
     color: var(--main-branco) */
-    background-color: #b94a4a;
+    background-color: #637da0;
     color: white;
 
 }

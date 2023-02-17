@@ -7,6 +7,28 @@
 // const controle = document.querySelectorAll(".controle-ajuste");
 const controle = document.querySelectorAll("[data-controler]");
 const estatistica = document.querySelectorAll("[data-estatistica]");
+const robotron = document.querySelector('[data-robotron]');
+
+let count = 0;
+const allRobos = [
+    "../imagens-do-robotron/Robotron 2000 - Amarelo.png", 
+    "../imagens-do-robotron/Robotron 2000 - Azul.png",
+    "../imagens-do-robotron/Robotron 2000 - Preto.png",
+    "../imagens-do-robotron/Robotron 2000 - Rosa.png",
+    "../imagens-do-robotron/Robotron 2000 - Vermelho.png",
+    "../imagens-do-robotron/Robotron 2000 - Branco.png"
+
+];
+const roboImg = document.querySelector('[data-robo-img]');
+robotron.addEventListener("click", () => {
+    roboImg.src = allRobos[count];
+    count++;
+    
+    if(count >= allRobos.length){
+        count = 0;
+    }
+    console.log('clicou com arrow ');
+});
 
 
 const pecas = {
