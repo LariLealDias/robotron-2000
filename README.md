@@ -1,5 +1,5 @@
 # robotron 2000
-Projeto interação com DOM desenvolvido com
+Projeto e anotações do curso de interação com DOM desenvolvido com
 
 ![Badge](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white) 
 ![Badge](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
@@ -22,6 +22,8 @@ O projeto é um treinamento de aulas do curso JavaScript - Manipulando o DOM, on
 ## 💻 Detalhes
 📌 Todo o projeo foi feito com manipulação em DOM <br>
 📌 Foi usados data-attributes para captar elementos HTML <br>
+📌 A pasta Desafio se refere a resolução do desafio passado no curso <br>
+
 
 
 
